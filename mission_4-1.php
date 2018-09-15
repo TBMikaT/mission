@@ -31,11 +31,11 @@
 					$sql -> execute();
 					echo "新しい投稿をしました。";
 				}else{
-				//書き込みを上書き編集 これが働いてなさげ
+				//書き込みを上書き編集
 					$nm = $_POST['name'];
 					$kome = $_POST['comment'];
 					$pasu = $_POST['pass'];
-					$taimu = date("Y-m-d H:i:s");//timestamp使う方法あるのか
+					$taimu = date("Y-m-d H:i:s");
 					$sql = "update Board set name='$nm', comment='$kome', pass='$pasu', time='$taimu' where id = $ed_num"; //updateで上書き
 					$result = $pdo->query($sql);
 					echo "投稿".$ed_num."を編集しました。";
